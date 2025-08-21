@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Laravel Pint - Apply coding standards
+# This script runs Laravel Pint to automatically fix coding standard issues
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Path to the pint.json config file
+CONFIG_FILE="$SCRIPT_DIR/pint.json"
+
+# Check if vendor/bin/pint exists
+if [ ! -f "./vendor/bin/pint" ]; then
+    echo "Error: vendor/bin/pint not found. Please run 'composer install' first."
+    exit 1
+fi
+
+# Check if config file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: pint.json config file not found at $CONFIG_FILE"
+    exit 1
+fi
+
+# Run pint with the config file
+echo "Running Laravel Pint with config: $CONFIG_FILE"
+./vendor/bin/pint --config="$CONFIG_FILE"

@@ -1,35 +1,86 @@
 # Laravel Coding Standards
 
-A generic package for implementing Laravel Pint coding standards across Laravel packages.
+A Composer package for implementing Laravel Pint coding standards across Laravel packages.
 
 ## Overview
 
 This package provides:
 - A standardized `pint.json` configuration file with PSR-12 preset and custom rules
 - Shell scripts to run Laravel Pint for code formatting and testing
+- Automatic Laravel Pint dependency management through Composer
 
-## Usage
+## Installation
 
-### Installation
+### Via Composer (Recommended)
 
-1. Add this repository as a submodule or copy the files to your Laravel project
-2. Ensure Laravel Pint is installed in your project:
+Install the package using Composer:
+
+```bash
+composer require synergitech/laravel-coding-standards --dev
+```
+
+This will automatically install Laravel Pint as a dependency and make the scripts available in your project.
+
+### Alternative Installation Methods
+
+1. **As a Git Submodule:**
+   ```bash
+   git submodule add https://github.com/SynergiTech/laravel-coding-standards.git tools/coding-standards
+   ```
+
+2. **Manual Installation:**
+   Copy the files directly to your project and install Laravel Pint separately:
    ```bash
    composer require laravel/pint --dev
    ```
+
+## Usage
 
 ### Running Pint
 
 #### Apply Code Formatting
 To automatically fix coding standard issues:
 ```bash
+./vendor/synergitech/laravel-coding-standards/pint
+```
+
+Or if installed as submodule/manually:
+```bash
+./tools/coding-standards/pint
+# or
 ./pint
 ```
 
 #### Test Code Standards
 To check for coding standard issues without making changes:
 ```bash
+./vendor/synergitech/laravel-coding-standards/pint-test
+```
+
+Or if installed as submodule/manually:
+```bash
+./tools/coding-standards/pint-test
+# or
 ./pint-test
+```
+
+### Adding Scripts to Your Composer.json
+
+For easier access, you can add these scripts to your project's `composer.json`:
+
+```json
+{
+    "scripts": {
+        "pint": "./vendor/synergitech/laravel-coding-standards/pint",
+        "pint:test": "./vendor/synergitech/laravel-coding-standards/pint-test"
+    }
+}
+```
+
+Then run:
+```bash
+composer run pint        # Apply formatting
+composer run pint:test   # Test standards
 ```
 
 ## Configuration
@@ -50,3 +101,12 @@ The `pint.json` file includes:
 - And many more quality-of-life improvements
 
 For a full list of rules, see the `pint.json` configuration file.
+
+## Requirements
+
+- PHP ^8.1
+- Laravel Pint ^1.0 (automatically installed with this package)
+
+## License
+
+This package is open-sourced software licensed under the [MIT license](LICENSE).

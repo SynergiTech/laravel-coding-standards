@@ -9,9 +9,17 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Path to the pint.json config file
 CONFIG_FILE="$SCRIPT_DIR/pint.json"
 
-# Check if vendor/bin/pint exists
-if [ ! -f "./vendor/bin/pint" ]; then
-    echo "Error: vendor/bin/pint not found. Please run 'composer install' first."
+# Try to find pint executable in different locations
+PINT_EXECUTABLE=""
+if [ -f "./vendor/bin/pint" ]; then
+    PINT_EXECUTABLE="./vendor/bin/pint"
+elif [ -f "../../../bin/pint" ]; then
+    # When installed via Composer in vendor/synergitech/laravel-coding-standards
+    PINT_EXECUTABLE="../../../bin/pint"
+elif command -v pint >/dev/null 2>&1; then
+    PINT_EXECUTABLE="pint"
+else
+    echo "Error: Laravel Pint not found. Please install it with 'composer require laravel/pint --dev'"
     exit 1
 fi
 
@@ -23,4 +31,4 @@ fi
 
 # Run pint in test mode with the config file
 echo "Testing coding standards with Laravel Pint using config: $CONFIG_FILE"
-./vendor/bin/pint --test --config="$CONFIG_FILE"
+$PINT_EXECUTABLE --test --config="$CONFIG_FILE"

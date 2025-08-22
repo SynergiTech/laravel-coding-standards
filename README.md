@@ -51,6 +51,13 @@ Or if installed as submodule/manually:
 ./pint
 ```
 
+You can pass additional arguments to customize the behavior:
+```bash
+./vendor/synergitech/laravel-coding-standards/pint --verbose
+./vendor/synergitech/laravel-coding-standards/pint --dry-run
+./vendor/synergitech/laravel-coding-standards/pint app/Models
+```
+
 #### Test Code Standards
 To check for coding standard issues without making changes:
 ```bash
@@ -62,6 +69,12 @@ Or if installed as submodule/manually:
 ./tools/coding-standards/pint-test
 # or
 ./pint-test
+```
+
+You can pass additional arguments to customize the testing:
+```bash
+./vendor/synergitech/laravel-coding-standards/pint-test --verbose
+./vendor/synergitech/laravel-coding-standards/pint-test app/Controllers
 ```
 
 ### Adding Scripts to Your Composer.json

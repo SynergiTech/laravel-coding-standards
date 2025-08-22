@@ -24,6 +24,6 @@ if [ ! -f "$CONFIG_FILE" ]; then
     exit 1
 fi
 
-# Run pint with the config file
+# Run pint with the config file and pass through all arguments
 echo "Running Laravel Pint with config: $CONFIG_FILE"
-$PINT_EXECUTABLE --config="$CONFIG_FILE"
+$PINT_EXECUTABLE --config="$CONFIG_FILE" "$@"

@@ -1,0 +1,46 @@
+{
+    "name": "synergitech/laravel-coding-standards",
+    "description": "A generic package for implementing Laravel Pint coding standards across Laravel packages",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SynergiTech",
+            "email": "hello@synergitech.com.au"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/pint": "^1.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "SynergiTech\\LaravelCodingStandards\\": "src/"
+        }
+    },
+    "bin": [
+        "pint",
+        "pint-test"
+    ],
+    "extra": {
+        "laravel": {
+            "providers": []
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "keywords": [
+        "laravel",
+        "pint",
+        "coding-standards",
+        "php-cs-fixer",
+        "code-quality",
+        "psr-12"
+    ]
+}

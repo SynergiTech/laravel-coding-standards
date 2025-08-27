@@ -51,7 +51,7 @@ Or if installed as submodule/manually:
 ./pint
 ```
 
-You can pass additional arguments to customize the behavior:
+You can pass additional arguments to customise the behaviour:
 ```bash
 ./vendor/synergitech/laravel-coding-standards/pint --verbose
 ./vendor/synergitech/laravel-coding-standards/pint --dry-run
@@ -71,7 +71,7 @@ Or if installed as submodule/manually:
 ./pint-test
 ```
 
-You can pass additional arguments to customize the testing:
+You can pass additional arguments to customise the testing:
 ```bash
 ./vendor/synergitech/laravel-coding-standards/pint-test --verbose
 ./vendor/synergitech/laravel-coding-standards/pint-test app/Controllers

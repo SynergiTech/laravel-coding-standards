@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Laravel Pint - Test coding standards
-# This script runs Laravel Pint in test mode to check for coding standard issues without making changes
+# This script runs Laravel Pint to test the code matches standards
 
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -11,13 +11,8 @@ CONFIG_FILE="$SCRIPT_DIR/pint.json"
 
 # Try to find pint executable in different locations
 PINT_EXECUTABLE=""
-if [ -f "./vendor/bin/pint" ]; then
-    PINT_EXECUTABLE="./vendor/bin/pint"
-elif [ -f "../../../bin/pint" ]; then
-    # When installed via Composer in vendor/synergitech/laravel-coding-standards
-    PINT_EXECUTABLE="../../../bin/pint"
-elif command -v pint >/dev/null 2>&1; then
-    PINT_EXECUTABLE="pint"
+if [ -f "./vendor/laravel/pint/builds/pint" ]; then
+    PINT_EXECUTABLE="./vendor/laravel/pint/builds/pint"
 else
     echo "Error: Laravel Pint not found. Please install it with 'composer require laravel/pint --dev'"
     exit 1
@@ -29,6 +24,6 @@ if [ ! -f "$CONFIG_FILE" ]; then
     exit 1
 fi
 
-# Run pint in test mode with the config file
-echo "Testing coding standards with Laravel Pint using config: $CONFIG_FILE"
-$PINT_EXECUTABLE --test --config="$CONFIG_FILE"
+# Run pint with the config file and pass through all arguments
+echo "Running Laravel Pint with config: $CONFIG_FILE"
+$PINT_EXECUTABLE --test --config="$CONFIG_FILE" "$@"

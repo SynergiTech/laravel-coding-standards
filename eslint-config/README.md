@@ -5,7 +5,7 @@ SynergiTech's shareable ESLint configuration with support for TypeScript, Vue, a
 ## Installation
 
 ```bash
-npm install --save-dev @synergitech/eslint-config
+npm i -D @synergitech/eslint-config
 ```
 
 You'll also need to install the peer dependencies based on which features you want to use:
@@ -13,13 +13,13 @@ You'll also need to install the peer dependencies based on which features you wa
 ### For the complete configuration (recommended):
 
 ```bash
-npm install --save-dev @eslint/js eslint-config-prettier eslint-plugin-import-x eslint-plugin-no-relative-import-paths eslint-plugin-unused-imports eslint-plugin-vitest eslint-plugin-vue globals typescript-eslint
+npm i -D @eslint/js eslint-config-prettier eslint-plugin-import-x eslint-plugin-no-relative-import-paths eslint-plugin-unused-imports eslint-plugin-vitest eslint-plugin-vue globals typescript-eslint
 ```
 
 ### For base configuration only (no Vue, no Vitest):
 
 ```bash
-npm install --save-dev @eslint/js eslint-config-prettier eslint-plugin-import-x eslint-plugin-no-relative-import-paths eslint-plugin-unused-imports globals typescript-eslint
+npm i -D @eslint/js eslint-config-prettier eslint-plugin-import-x eslint-plugin-no-relative-import-paths eslint-plugin-unused-imports globals typescript-eslint
 ```
 
 ## Usage
@@ -143,23 +143,3 @@ This configuration follows these principles:
 - **Import hygiene**: Maintains clean import/export statements
 - **Vue best practices**: Follows Vue 3 Composition API recommendations
 - **Test-friendly**: Provides appropriate rules for test files
-
-## Contributing
-
-This configuration is maintained by SynergiTech. If you have suggestions for improvements, please open an issue or pull request.
-
-## Migration from Monolithic Config
-
-If you're migrating from a large monolithic ESLint configuration (like the original 218-line `eslint.config.js`), you can now replace it with just 3 lines:
-
-```javascript
-// Before: 218 lines of configuration
-// After: 3 lines using shareable config
-import config from "@synergitech/eslint-config";
-
-export default config;
-```
-
-This provides the exact same linting behaviour while being much more maintainable and reusable across projects.
-
-See [MIGRATION.md](./MIGRATION.md) for detailed migration examples.

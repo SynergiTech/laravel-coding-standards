@@ -64,7 +64,7 @@
       "sort_algorithm": "none"
     },
     "ordered_imports": {
-      "imports_order" => [
+      "imports_order": [
         "class",
         "const",
         "function"

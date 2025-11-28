@@ -1,0 +1,23 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+CONFIG_FILE="$SCRIPT_DIR/phpcs.xml"
+
+PINT_EXECUTABLE=""
+if [ -f "./vendor/squizlabs/php_codesniffer/bin/phpcs" ]; then
+    PINT_EXECUTABLE="./vendor/squizlabs/php_codesniffer/bin/phpcs"
+else
+    echo "Error: PHP CS not found."
+    exit 1
+fi
+
+# Check if config file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: phpcs.xml config file not found at $CONFIG_FILE"
+    exit 1
+fi
+
+# Run pint with the config file and pass through all arguments
+echo "Running PHP CS with config: $CONFIG_FILE"
+$PINT_EXECUTABLE --standard="$CONFIG_FILE" "$@"

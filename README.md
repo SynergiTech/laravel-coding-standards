@@ -5,7 +5,7 @@ A Composer package for implementing Laravel Pint coding standards across Laravel
 ## Overview
 
 This package provides:
-- A standardized `pint.json` configuration file with PSR-12 preset and custom rules
+- A standardised `pint.json` configuration file with PSR-12 preset and custom rules
 - Shell scripts to run Laravel Pint for code formatting and testing
 - Automatic Laravel Pint dependency management through Composer
 

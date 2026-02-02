@@ -21,8 +21,8 @@
         }
     },
     "bin": [
-        "pint",
-        "pint-test"
+        "scs",
+        "scs-test"
     ],
     "extra": {
         "laravel": {

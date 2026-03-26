@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 # Laravel Pint - Apply coding standards
 # This script runs Laravel Pint to automatically fix coding standard issues
 
 # Get the directory where this script is located
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")"; pwd -P)"
 
 # Path to the pint.json config file
 CONFIG_FILE="$SCRIPT_DIR/pint.json"

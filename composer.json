@@ -21,10 +21,6 @@
             "SynergiTech\\LaravelCodingStandards\\": "src/"
         }
     },
-    "bin": [
-        "pint",
-        "pint-test"
-    ],
     "extra": {
         "laravel": {
             "providers": []

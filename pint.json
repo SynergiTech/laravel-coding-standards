@@ -64,6 +64,11 @@
       "sort_algorithm": "none"
     },
     "ordered_imports": {
+      "imports_order": [
+        "class",
+        "const",
+        "function"
+      ],
       "sort_algorithm": "alpha"
     },
     "ordered_traits": true,

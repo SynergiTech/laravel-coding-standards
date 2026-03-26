@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- @see https://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php -->
+<ruleset>
+    <file>app</file>
+    <file>database</file>
+    <file>tests</file>
+
+    <!-- Show progress of the run -->
+    <arg value="p"/>
+
+    <!-- Show sniff codes in all reports -->
+    <arg value="s"/>
+
+    <rule ref="PSR12">
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+        <exclude name="Generic.Files.LineLength"/>
+        <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+        <exclude name="PSR12.ControlStructures.ControlStructureSpacing.CloseParenthesisLine"/>
+        <exclude name="PSR12.ControlStructures.ControlStructureSpacing.FirstExpressionLine"/>
+        <exclude name="PSR12.Operators.OperatorSpacing.NoSpaceAfter"/>
+        <exclude name="PSR12.Operators.OperatorSpacing.NoSpaceBefore"/>
+        <exclude name="PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose"/>
+    </rule>
+
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>database/</exclude-pattern>
+    </rule>
+</ruleset>

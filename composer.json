@@ -22,7 +22,6 @@
         }
     },
     "bin": [
-        "phpcs",
         "pint",
         "pint-test"
     ],

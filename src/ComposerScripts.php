@@ -6,17 +6,7 @@ use Composer\Script\Event;
 
 class ComposerScripts
 {
-    public static function postInstall(Event $event): void
-    {
-        static::publishGuidelines($event);
-    }
-
-    public static function postUpdate(Event $event): void
-    {
-        static::publishGuidelines($event);
-    }
-
-    protected static function publishGuidelines(Event $event): void
+    public static function publishGuidelines(Event $event): void
     {
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
         $packageDir = $vendorDir . '/synergitech/laravel-coding-standards';

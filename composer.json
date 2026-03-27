@@ -21,14 +21,6 @@
             "SynergiTech\\LaravelCodingStandards\\": "src/"
         }
     },
-    "scripts": {
-        "post-install-cmd": [
-            "SynergiTech\\LaravelCodingStandards\\ComposerScripts::postInstall"
-        ],
-        "post-update-cmd": [
-            "SynergiTech\\LaravelCodingStandards\\ComposerScripts::postUpdate"
-        ]
-    },
     "extra": {
         "laravel": {
             "providers": []

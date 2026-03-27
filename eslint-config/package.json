@@ -1,0 +1,55 @@
+{
+  "name": "@synergitech/eslint-config",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./base": "./src/base.js",
+    "./vue": "./src/vue.js",
+    "./vitest": "./src/vitest.js"
+  },
+  "files": [
+    "src/"
+  ],
+  "description": "SynergiTech's shareable ESLint configuration",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "vue",
+    "vitest"
+  ],
+  "homepage": "https://github.com/SynergiTech/laravel-coding-standards",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SynergiTech/laravel-coding-standards.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SynergiTech/laravel-coding-standards/issues"
+  },
+  "author": {
+    "name": "synergitech",
+    "url": "https://www.npmjs.com/~synergitech"
+  },
+  "peerDependencies": {
+    "@eslint/js": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-no-relative-import-paths": "^1.6.1",
+    "eslint-plugin-unused-imports": "^4.2.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "eslint-plugin-vue": "^10.4.0",
+    "globals": "^16.3.0",
+    "typescript-eslint": "^8.39.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-vue": {
+      "optional": true
+    },
+    "eslint-plugin-vitest": {
+      "optional": true
+    }
+  }
+}

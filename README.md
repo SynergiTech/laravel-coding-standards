@@ -96,6 +96,30 @@ composer run pint        # Apply formatting
 composer run pint:test   # Test standards
 ```
 
+### Boost Guidelines
+
+As this plugin acts as a wrapper for pint, the boost guidelines that get published into the project do not reference this package.
+If you use boost then you will need to override the boost guidelines for pint.
+If you want this package to publish boost guideline stubs into your project (`.ai/guidelines`), add the Composer install script override below to your project's `composer.json`:
+
+```json
+{
+    "scripts": {
+        "post-install-cmd": [
+            "SynergiTech\\LaravelCodingStandards\\ComposerScripts::publishGuidelines"
+        ]
+    }
+}
+```
+
+After adding it, run:
+
+```bash
+composer install
+```
+
+This triggers `SynergiTech\LaravelCodingStandards\ComposerScripts::publishGuidelines` and copies the guideline files into `.ai/guidelines` which boost will interpret as an overwrite when running `boost:install` and `boost:update`.
+
 ## Configuration
 
 The `pint.json` file includes:

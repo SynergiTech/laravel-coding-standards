@@ -4,7 +4,7 @@ namespace SynergiTech\LaravelCodingStandards;
 
 use Composer\Script\Event;
 
-class ComposerScripts
+final class ComposerScripts
 {
     public static function publishGuidelines(Event $event): void
     {
@@ -23,7 +23,7 @@ class ComposerScripts
         $event->getIO()->write('<info>Published AI guidelines to .ai/guidelines/</info>');
     }
 
-    protected static function copyDirectory(string $source, string $destination): void
+    private static function copyDirectory(string $source, string $destination): void
     {
         $iterator = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($source, \RecursiveDirectoryIterator::SKIP_DOTS),

@@ -39,6 +39,6 @@
         "php-cs-fixer",
         "code-quality",
         "psr-12",
-        "dev",
+        "dev"
     ]
 }

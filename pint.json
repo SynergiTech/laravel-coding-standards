@@ -8,6 +8,11 @@
     "assign_null_coalescing_to_coalesce_equal": true,
     "blank_line_after_namespace": true,
     "blank_line_after_opening_tag": true,
+    "class_attributes_separation": {
+      "elements": {
+        "method": "one"
+      }
+    },
     "combine_consecutive_issets": true,
     "combine_consecutive_unsets": true,
     "concat_space": {
@@ -34,6 +39,9 @@
     "modernize_types_casting": true,
     "new_with_braces": true,
     "no_empty_comment": true,
+    "no_extra_blank_lines": {
+      "tokens": ["extra", "use"]
+    },
     "no_superfluous_elseif": false,
     "no_useless_else": true,
     "not_operator_with_successor_space": true,
